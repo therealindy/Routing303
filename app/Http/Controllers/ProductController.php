@@ -131,7 +131,7 @@ class ProductController extends Controller
      */
     public function index()
     {
-        //
+        //การดึงข้อมูลจากฐานข้อมูลไปยังหน้าเว็บ inertia โดยการ render
         return Inertia::render('Products/Index', ['products' => $this->products]);
     }
 
@@ -153,17 +153,17 @@ class ProductController extends Controller
 
     /**
      * Display the specified resource.
-     */
+     */ //การแสดงข้อมูลของสินค้าที่เลือก
     public function show(string $id)
     {
-        //
+        //ค้นหาสินค้าที่มี id ตรงกับ $id
         $products = collect($this->products)->firstWhere('id',$id);
 
         if(!$products){
-            abort(404, 'Product not found');
+            abort(404, 'Product not found'); //ถ้าไม่เจอidที่ตรงกัน จะขึ้น 404 Product not found
         }
 
-        return Inertia::render('Products/Show', ['products' => $products]);
+        return Inertia::render('Products/Show', ['products' => $products]); //แสดงหน้า products/show แล้วส่งของมูลproductsไแด้วย
     }
 
     /**

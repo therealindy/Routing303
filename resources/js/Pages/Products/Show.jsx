@@ -12,7 +12,7 @@ export default function Show({ products }) {
             </div>
             <div className="px-8 mx-auto max-w-7xl sm:px-6 py-8 ">
 
-                <div className="flex items-start space-x-8"> {/* ใช้ Flexbox เพื่อจัดเรียงแนวนอน */}
+                <div className="flex items-start space-x-8"> {/* ใช้เพื่อจัดเรียงแนวนอน */}
                     <img
                         src={products.image}
                         alt={products.name}
