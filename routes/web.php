@@ -9,7 +9,7 @@ use App\Http\Controllers\ProductController;
 
 //หน้าที่คือการเรียกใช้ข้อมูลจากProductController
 
-//สร้างmiddlewareให้products เพื่อให้ไปเช็คว่าเข้าสู่ระบบแล้วหรือยัง ถ้าเข้าสู่ระบบแล้วจะสามารถดูได้ ถ้าไม่จะนำไปสู่หน้าเข้าสู่ระบบ
+//สร้างmiddlewareให้products เพื่อให้ไปเช็คว่าเข้าสู่ระบบแล้วหรือยัง ถ้าเข้าสู่ระบบแล้วจะสามารถดูได้ ถ้าไม่จะนำไปสู่หน้ารายการไม่ได้
 Route::middleware('auth')->group(function () {
     Route::get('/products', [ProductController::class, 'index'])->name('Products.index'); //เปลี่ยนชื่อให้ใช้งานง่ายขึ้น
     Route::get('/products/{id}', [ProductController::class, 'show'])->name('Products.show');
